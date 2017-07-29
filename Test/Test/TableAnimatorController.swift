@@ -20,6 +20,7 @@ class TableAnimatorController: UIViewController {
         //ProgressCell
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()//avoid dummy cell
         self.tableView.register(UINib(nibName: "ProgressCell", bundle: nil), forCellReuseIdentifier: "ProgressCell")
     }
 
