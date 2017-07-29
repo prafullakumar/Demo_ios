@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProgressCell" rowHeight="70" id="KGk-i7-Jjw" customClass="ProgressCell" customModule="Test" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="321" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="321" height="69.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3o-xf-8eQ">
+                        <rect key="frame" x="22" y="24.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqg-1G-xJw" customClass="CirculerProgressView" customModule="Test" customModuleProvider="target">
+                        <rect key="frame" x="252" y="10" width="50" height="50"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="wdY-Iu-k4M"/>
+                            <constraint firstAttribute="width" constant="50" id="zZi-hc-tQa"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clockwise" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="IBColor1">
+                                <color key="value" red="1" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="IBColor2">
+                                <color key="value" red="1" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="IBColor3">
+                                <color key="value" red="1" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7V-DG-Bn4">
+                        <rect key="frame" x="262" y="25.5" width="30" height="19.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="RrV-iL-PlK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="A3o-xf-8eQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="F4C-gf-OYt"/>
+                    <constraint firstItem="A3o-xf-8eQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="Vmx-eZ-kog"/>
+                    <constraint firstItem="a7V-DG-Bn4" firstAttribute="centerX" secondItem="xqg-1G-xJw" secondAttribute="centerX" id="WbS-Io-l8T"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="xqg-1G-xJw" secondAttribute="trailing" constant="11" id="kkO-G0-0i4"/>
+                    <constraint firstItem="a7V-DG-Bn4" firstAttribute="centerY" secondItem="xqg-1G-xJw" secondAttribute="centerY" id="mL2-u8-ppr"/>
+                    <constraint firstItem="xqg-1G-xJw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zBf-41-iId"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="playerName" destination="A3o-xf-8eQ" id="Mzf-wE-0po"/>
+                <outlet property="progressBar" destination="xqg-1G-xJw" id="0iO-Sx-Gs0"/>
+                <outlet property="timerText" destination="a7V-DG-Bn4" id="NW8-Rq-mg0"/>
+            </connections>
+            <point key="canvasLocation" x="-13.5" y="-27"/>
+        </tableViewCell>
+    </objects>
+</document>
