@@ -33,7 +33,7 @@
                             <constraint firstAttribute="width" constant="50" id="zZi-hc-tQa"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="clockwise" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clockwise" value="YES"/>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
                             <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
                                 <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
@@ -49,7 +49,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7V-DG-Bn4">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7V-DG-Bn4">
                         <rect key="frame" x="262" y="25.5" width="30" height="19.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="RrV-iL-PlK"/>

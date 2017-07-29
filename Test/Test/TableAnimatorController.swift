@@ -35,7 +35,7 @@ class TableAnimatorController: UIViewController {
             playerName = cellTimerBucketCollection[count - 1].playerNumber + 1
         }
         let newCell = CellTimerDataBucket.init(playerNum: playerName)
-        
+        newCell.delegate = self
         self.tableView.beginUpdates()
         _ = self.cellTimerBucketCollection.append(newCell)
         tableView.insertRows(at: [IndexPath.init(row: count, section: 0)], with: .bottom)
@@ -59,7 +59,7 @@ extension TableAnimatorController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let newCell = tableView.dequeueReusableCell(withIdentifier: "ProgressCell") as! ProgressCell
         let bucket = cellTimerBucketCollection[indexPath.row]
-        newCell.playerName.text = "Player" + String(bucket.playerNumber)
+        newCell.playerName.text = "Player " + String(bucket.playerNumber)
         newCell.configTimer(currentTime: bucket.remaningTime)
         return newCell
     }
@@ -70,13 +70,21 @@ extension TableAnimatorController : UITableViewDataSource {
 }
 
 extension TableAnimatorController : TimeOverDelegate {
-    func didFinishTimer(playerName _ : Int) {
+    func didFinishTimer(playerName : Int) {
         // remove timer
         // Player added first will removed first so no need of playerName
         self.tableView.beginUpdates()
         _ = self.cellTimerBucketCollection.remove(at: 0)
-        tableView.insertRows(at: [IndexPath.init(row: 0, section: 0)], with: .top)
+        tableView.deleteRows(at: [IndexPath.init(row: 0, section: 0)], with: .top)
         self.tableView.endUpdates()
+        
+        let alertController = UIAlertController(title: "Player \(playerName)", message: Q2Constants.alertMessage, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+            
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
         
     }
 }

@@ -27,9 +27,9 @@ class ProgressCell: UITableViewCell {
     }
     
     func configTimer(currentTime : Int){
-        let fromAngle =  (currentTime/200)*360
-        progressBar.layoutSubviews()
-        progressBar.animate(fromAngle: Double(fromAngle), toAngle: 0, duration: TimeInterval(currentTime), completion: nil)
+        
+        progressBar.progress =  (CGFloat(currentTime)/CGFloat(Q2Constants.countDownTime))
+
         
         timerText.text = String(currentTime)
         
@@ -44,6 +44,7 @@ class ProgressCell: UITableViewCell {
         if let crTime = Int(timerText.text ?? "0") {
             if crTime > 0 {
                 timerText.text = String(crTime - 1)
+                progressBar.progress =  (CGFloat(crTime - 1)/CGFloat(Q2Constants.countDownTime))
             }
         }
     }

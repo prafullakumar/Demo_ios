@@ -16,7 +16,7 @@ protocol TimeOverDelegate: class {
 
 class CellTimerDataBucket: NSObject {
     var playerNumber : Int = 0
-    var remaningTime : Int = 200
+    var remaningTime : Int = Q2Constants.countDownTime
     var delegate : TimeOverDelegate?
     var timer : Timer?
     
