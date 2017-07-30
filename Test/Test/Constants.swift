@@ -10,4 +10,5 @@ import UIKit
 
 class Constants {
    static let baseUrl = "https://hn.algolia.com/api/v1/search"
+   static let errorMessage = "Details Not available"
 }

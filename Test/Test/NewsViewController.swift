@@ -16,7 +16,7 @@ class NewsViewController: UITableViewController {
     var lastSearchedText = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.title = "Question1"
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
@@ -49,7 +49,23 @@ class NewsViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    // MARK: - Table view delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let url = baseModel?.hits?[indexPath.row].url {
+            let wv = WebViewController()
+            wv.url = url
+            self.navigationController?.pushViewController(wv, animated: true)
+        }else{
+            let alertController = UIAlertController(title: "Error!", message: Constants.errorMessage, preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                (result : UIAlertAction) -> Void in
+                
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -123,16 +139,7 @@ class NewsViewController: UITableViewController {
     
 
     
-    /// progress hoods
-    func showHood(){
-        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
-            LoadingHood.shared.showInWindow(window: window, withHeader: "Please Wait!", andFooter: "Searching")
-        }
-    }
-    
-    func hideHood(){
-            LoadingHood.shared.hide()
-    }
+   
     
     // network call
     func getNews(_ searchStr : String,isPulltoRefresh : Bool = false){
@@ -192,3 +199,16 @@ extension NewsViewController: UISearchResultsUpdating {
     
 }
 
+
+extension UIViewController {
+    /// progress hoods
+    func showHood(footerMessage : String = "Searching..."){
+        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+            LoadingHood.shared.showInWindow(window: window, withHeader: "Please Wait!", andFooter: footerMessage)
+        }
+    }
+    
+    func hideHood(){
+        LoadingHood.shared.hide()
+    }
+}

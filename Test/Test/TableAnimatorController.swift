@@ -18,6 +18,7 @@ class TableAnimatorController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //ProgressCell
+        self.navigationItem.title = "Question2"
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()//avoid dummy cell
