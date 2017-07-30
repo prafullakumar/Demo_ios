@@ -41,7 +41,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <state key="normal" title="Question 1 Solve"/>
                                 <connections>
-                                    <segue destination="yQ8-pK-T63" kind="show" id="yTM-9I-Lzz"/>
+                                    <segue destination="12u-jw-4Dq" kind="show" id="3Ut-bJ-Rbf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,48 +58,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="193" y="233"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="6YA-W7-b3G">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i8b-aw-7ei" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="yQ8-pK-T63" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XfU-iy-R7g"/>
-                        <viewControllerLayoutGuide type="bottom" id="oGC-qa-csk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TJN-Ev-7Rq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="7lq-bC-twq">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="5O0-UJ-g20"/>
-                                </constraints>
-                                <string key="placeholder">(ex -
-Sports,Bollywood,Politics,Art etc).</string>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vih-dp-EFq">
-                                <rect key="frame" x="16" y="108" width="343" height="559"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="vih-dp-EFq" secondAttribute="trailing" id="6Lz-hS-1xJ"/>
-                            <constraint firstItem="7lq-bC-twq" firstAttribute="leading" secondItem="TJN-Ev-7Rq" secondAttribute="leading" id="9D4-Wg-5lo"/>
-                            <constraint firstItem="vih-dp-EFq" firstAttribute="top" secondItem="7lq-bC-twq" secondAttribute="bottom" id="DGF-Jx-7Dd"/>
-                            <constraint firstItem="7lq-bC-twq" firstAttribute="top" secondItem="XfU-iy-R7g" secondAttribute="bottom" id="Eqz-ra-eX1"/>
-                            <constraint firstItem="7lq-bC-twq" firstAttribute="centerX" secondItem="TJN-Ev-7Rq" secondAttribute="centerX" id="FYn-Cs-GQS"/>
-                            <constraint firstItem="oGC-qa-csk" firstAttribute="top" secondItem="vih-dp-EFq" secondAttribute="bottom" id="erb-84-odm"/>
-                            <constraint firstItem="vih-dp-EFq" firstAttribute="leading" secondItem="TJN-Ev-7Rq" secondAttribute="leadingMargin" id="fXJ-2K-1I5"/>
-                        </constraints>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1177" y="-547"/>
         </scene>
         <!--Table Animator Controller-->
         <scene sceneID="Fpm-I8-A4K">
@@ -167,6 +125,34 @@ Sports,Bollywood,Politics,Art etc).</string>
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="192.80000000000001" y="-547.37631184407803"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="t9x-zd-QFw">
+            <objects>
+                <tableViewController id="12u-jw-4Dq" customClass="NewsViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pFH-ng-ch3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Nam-M9-HU1">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nam-M9-HU1" id="YSM-nT-iPV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="12u-jw-4Dq" id="wLr-kp-m9P"/>
+                            <outlet property="delegate" destination="12u-jw-4Dq" id="5hI-5t-NZi"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KpE-Yu-wR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1459" y="-747"/>
         </scene>
     </scenes>
 </document>
